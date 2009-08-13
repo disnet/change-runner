@@ -10,6 +10,7 @@ from optparse import OptionParser
 sleep_time = 1
 
 def watch_loop(command, path_to_watch):
+    # Grab all the files and their stats in the watched directories ignoreing dotfiles and files with a trailing ~
     before = dict ([(f, os.stat(f).st_mtime) for f in sum([ [d + lf for lf in os.listdir(d) if lf[0] != '.' and lf[len(lf)-1] != "~"] for d in path_to_watch], [] )])
     while 1:
         time.sleep(sleep_time)
