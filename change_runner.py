@@ -1,3 +1,9 @@
+# Change Runner
+# 
+# Script to launch a command when files change in a watched directory
+#
+# Copyright (c) 2009 Tim Disney
+# Licensed under the MIT license
 import os, time
 from optparse import OptionParser
 
